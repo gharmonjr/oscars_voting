@@ -26,6 +26,10 @@ gem "stimulus-rails"
 # Build JSON APIs with ease
 gem "jbuilder"
 
+# Add bcrypt for password hashing
+gem "bcrypt", "~> 3.1.7"
+
+# Linting
 gem "standardrb"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

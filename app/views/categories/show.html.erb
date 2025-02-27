@@ -1,0 +1,19 @@
+<h1><%= @category.name %></h1>
+<h2>Actor Nominations</h2>
+<ul>
+  <% @actor_nominations.each do |nom| %>
+    <li><%= nom.actor.name %> - <%= form_with model: ActorCategoryUser.new, url: actor_category_users_path do |f| %>
+        <%= f.hidden_field :actor_category_id, value: nom.id %>
+        <%= f.number_field :vote, min: 0, max: 10 %> <%= f.submit "Vote" %>
+      <% end %></li>
+  <% end %>
+</ul>
+<h2>Movie Nominations</h2>
+<ul>
+  <% @movie_nominations.each do |nom| %>
+    <li><%= nom.movie.title %> - <%= form_with model: MovieCategoryUser.new, url: movie_category_users_path do |f| %>
+        <%= f.hidden_field :movie_category_id, value: nom.id %>
+        <%= f.number_field :vote, min: 0, max: 10 %> <%= f.submit "Vote" %>
+      <% end %></li>
+  <% end %>
+</ul>
