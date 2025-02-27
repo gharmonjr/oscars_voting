@@ -3,3 +3,8 @@ log/
 tmp/
 *.sqlite3
 .env
+/.bundle
+/config/master.key
+.DS_Store
+*.local
+.idea
